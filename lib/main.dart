@@ -18,14 +18,22 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  void decrement() {
+    print("Decremento");
+  }
+
+  void increment() {
+    print("increment");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Text(
+        children: [
+          const Text(
             "Pode entrar !",
             style: TextStyle(
               fontSize: 30,
@@ -33,12 +41,45 @@ class HomePage extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Text(
+          const Text(
             "0",
             style: TextStyle(
-              fontSize: 30,
+              fontSize: 100,
               color: Colors.white,
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                onPressed: increment,
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  padding: const EdgeInsets.all(32),
+                ),
+                child: const Text(
+                  "Entrou",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              TextButton(
+                onPressed: decrement,
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  padding: const EdgeInsets.all(32),
+                ),
+                child: const Text(
+                  "Saiu",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                  ),
+                ),
+              )
+            ],
           ),
         ],
       ),
