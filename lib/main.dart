@@ -1,7 +1,9 @@
+
 import 'package:flutter/material.dart';
+import 'package:todolist/views/todo_page.dart';
 
 void main(){
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -9,6 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return  MaterialApp(
+      home: TodoPage() ,
+    );
   }
 }
+
+
