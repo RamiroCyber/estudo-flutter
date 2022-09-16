@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TodoPage extends StatelessWidget {
-  TodoPage({Key? key}) : super(key: key);
+class Login extends StatelessWidget {
+  Login({Key? key}) : super(key: key);
 
   final TextEditingController emailController = TextEditingController();
 
@@ -36,7 +36,7 @@ class TodoPage extends StatelessWidget {
                   border: OutlineInputBorder(),
                 ),
               ),
-               ElevatedButton(
+              ElevatedButton(
                 onPressed: login,
                 child: Text("Entrar"),
               )
@@ -46,6 +46,7 @@ class TodoPage extends StatelessWidget {
       ),
     );
   }
+
   void login() {
     String email = emailController.text;
     String senha = passwordController.text;
@@ -55,5 +56,3 @@ class TodoPage extends StatelessWidget {
     passwordController.clear();
   }
 }
-
-
