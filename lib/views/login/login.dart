@@ -7,6 +7,8 @@ class Login extends StatelessWidget {
 
   final TextEditingController passwordController = TextEditingController();
 
+  get email => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,8 +52,7 @@ class Login extends StatelessWidget {
   void login() {
     String email = emailController.text;
     String senha = passwordController.text;
-    print(email);
-    print(senha);
+
     emailController.clear();
     passwordController.clear();
   }

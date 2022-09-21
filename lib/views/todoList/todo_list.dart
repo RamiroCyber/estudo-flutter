@@ -36,6 +36,16 @@ class TodoList extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10),
+                ListView(
+                  shrinkWrap: true,
+                  children: [
+                    Container(
+                      height: 100,
+                      color: Colors.red,
+                    )
+                  ],
+                ),
+              SizedBox(height: 10),
               Row(
                 children: [
                   Expanded(
