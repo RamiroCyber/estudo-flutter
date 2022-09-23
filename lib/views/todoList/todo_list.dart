@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class TodoList extends StatelessWidget {
-  const TodoList({Key? key}) : super(key: key);
+   TodoList({Key? key}) : super(key: key);
+
+var data = DateTime.now();
+
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +42,14 @@ class TodoList extends StatelessWidget {
                 ListView(
                   shrinkWrap: true,
                   children: [
-                    Container(
-                      height: 100,
-                      color: Colors.red,
-                    )
+                    ListTile(
+                      title: Text('Tarefa 1'),
+                      subtitle: Text('$data'),
+                      leading: Icon(Icons.access_alarm,size: 40),
+                      onTap: () {
+                        print("object");
+                      },
+                    ),
                   ],
                 ),
               SizedBox(height: 10),
