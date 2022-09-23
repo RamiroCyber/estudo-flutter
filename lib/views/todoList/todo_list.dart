@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
 class TodoList extends StatelessWidget {
-   TodoList({Key? key}) : super(key: key);
+  TodoList({Key? key}) : super(key: key);
 
-var data = DateTime.now();
+  final TextEditingController todoController = TextEditingController();
 
+  var data = DateTime.now();
+
+  List<String> todos = [];
 
   @override
   Widget build(BuildContext context) {
@@ -39,19 +42,19 @@ var data = DateTime.now();
                 ],
               ),
               SizedBox(height: 10),
-                ListView(
-                  shrinkWrap: true,
-                  children: [
-                    ListTile(
-                      title: Text('Tarefa 1'),
-                      subtitle: Text('$data'),
-                      leading: Icon(Icons.access_alarm,size: 40),
-                      onTap: () {
-                        print("object");
-                      },
-                    ),
-                  ],
-                ),
+              ListView(
+                shrinkWrap: true,
+                children: [
+                  ListTile(
+                    title: Text('Tarefa 1'),
+                    subtitle: Text('$data'),
+                    leading: Icon(Icons.access_alarm, size: 40),
+                    onTap: () {
+                      print("object");
+                    },
+                  ),
+                ],
+              ),
               SizedBox(height: 10),
               Row(
                 children: [
