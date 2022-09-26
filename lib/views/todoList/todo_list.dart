@@ -14,6 +14,8 @@ class _TodoListState extends State<TodoList> {
 
   List<String> todos = [];
 
+  var  tarefa = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +77,7 @@ class _TodoListState extends State<TodoList> {
               Row(
                 children: [
                   Expanded(
-                    child: Text("Você possue 0 tarefas pendentes"),
+                    child: Text("Você possue $tarefa tarefas pendentes"),
                   ),
                   ElevatedButton(
                     onPressed: () {},
