@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/todoListTitle.dart';
+
 class TodoList extends StatefulWidget {
   TodoList({Key? key}) : super(key: key);
 
@@ -62,14 +64,7 @@ class _TodoListState extends State<TodoList> {
                   shrinkWrap: true,
                   children: [
                     for (String todo in todos)
-                      ListTile(
-                        title: Text(todo),
-                        subtitle: Text('Data: $data'),
-                        leading: Icon(Icons.access_alarm, size: 40),
-                        onTap: () {
-                          print("Tarefa: $todo");
-                        },
-                      ),
+                      TodoListTitle(),
                   ],
                 ),
               ),
