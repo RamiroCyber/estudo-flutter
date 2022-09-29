@@ -9,39 +9,40 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(
-                keyboardType: TextInputType.emailAddress,
-                controller: emailController,
-                decoration: const InputDecoration(
-                  labelText: "E-mail",
-                  hintText: "Digite aqui seu email",
-                  border: OutlineInputBorder(),
+    return SafeArea(
+      child: Scaffold(
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  controller: emailController,
+                  decoration: const InputDecoration(
+                    labelText: "E-mail",
+                    hintText: "Digite aqui seu email",
+                    border: OutlineInputBorder(),
+                  ),
                 ),
-              ),
-              const SizedBox(height: 10),
-              TextField(
-                keyboardType: TextInputType.text,
-                controller: passwordController,
-                obscureText: true,
-                decoration: const InputDecoration(
-                  labelText: "Senha",
-                  hintText: "Digite aqui sua senha",
-                  border: OutlineInputBorder(),
+                const SizedBox(height: 10),
+                TextField(
+                  keyboardType: TextInputType.text,
+                  controller: passwordController,
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    labelText: "Senha",
+                    hintText: "Digite aqui sua senha",
+                    border: OutlineInputBorder(),
+                  ),
                 ),
-              ),
-              ElevatedButton(
-                onPressed: login,
-                child: Text("Entrar"),
-              )
-            ],
+                ElevatedButton(
+                  onPressed: login,
+                  child: Text("Entrar"),
+                )
+              ],
+            ),
           ),
         ),
       ),

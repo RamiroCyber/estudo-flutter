@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class TodoListTitle extends StatelessWidget {
-  const TodoListTitle({Key? key}) : super(key: key);
+class TodoListItem extends StatelessWidget {
+  const TodoListItem({Key? key, required this.title}) : super(key: key);
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class TodoListTitle extends StatelessWidget {
           style: TextStyle(fontSize: 12),
         ),
         Text(
-          "data",
+          title,
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
         ),
       ]),

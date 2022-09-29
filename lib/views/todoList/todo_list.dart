@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/todoListTitle.dart';
+import '../../widgets/todoListItem.dart';
 
 class TodoList extends StatefulWidget {
   TodoList({Key? key}) : super(key: key);
@@ -22,7 +22,6 @@ class _TodoListState extends State<TodoList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actionsIconTheme: ,
         centerTitle: true,
       ),
       body: Padding(
@@ -67,7 +66,7 @@ class _TodoListState extends State<TodoList> {
                   shrinkWrap: true,
                   children: [
                     for (String todo in todos)
-                      TodoListTitle(),
+                      TodoListItem(title: todo),
                   ],
                 ),
               ),
@@ -75,7 +74,7 @@ class _TodoListState extends State<TodoList> {
               Row(
                 children: [
                   Expanded(
-                    child: Text("Você possue $tarefa tarefas pendentes"),
+                    child: Text("Você possue ${todos.length} tarefas pendentes"),
                   ),
                   ElevatedButton(
                     onPressed: () {},
