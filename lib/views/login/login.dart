@@ -32,6 +32,7 @@ class Login extends StatelessWidget {
                   controller: passwordController,
                   obscureText: true,
                   decoration: const InputDecoration(
+
                     labelText: "Senha",
                     hintText: "Digite aqui sua senha",
                     border: OutlineInputBorder(),

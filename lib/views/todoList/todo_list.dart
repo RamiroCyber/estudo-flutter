@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todolist/models/todo.dart';
 
 import '../../widgets/todoListItem.dart';
 
@@ -14,9 +15,9 @@ class _TodoListState extends State<TodoList> {
 
   var data = '';
 
-  List<String> todos = [];
+  List<Todo> todos = [];
 
-  var  tarefa = 0;
+  var tarefa = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +48,8 @@ class _TodoListState extends State<TodoList> {
                       data = DateTime.now().toString();
                       String text = todoController.text;
                       setState(() {
-                        todos.add(text);
+                        Todo newTodo = Todo(title: text, date: DateTime.now());
+                        todos.add(newTodo);
                       });
                       todoController.clear();
                     },
@@ -65,8 +67,7 @@ class _TodoListState extends State<TodoList> {
                 child: ListView(
                   shrinkWrap: true,
                   children: [
-                    for (String todo in todos)
-                      TodoListItem(title: todo),
+                    for (Todo todo in todos) TodoListItem(title: todo.title),
                   ],
                 ),
               ),
@@ -74,7 +75,8 @@ class _TodoListState extends State<TodoList> {
               Row(
                 children: [
                   Expanded(
-                    child: Text("Você possue ${todos.length} tarefas pendentes"),
+                    child:
+                        Text("Você possue ${todos.length} tarefas pendentes"),
                   ),
                   ElevatedButton(
                     onPressed: () {},
