@@ -71,7 +71,7 @@ class _TodoListState extends State<TodoList> {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 20),
               Row(
                 children: [
                   Expanded(
