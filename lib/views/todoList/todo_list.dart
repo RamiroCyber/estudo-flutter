@@ -13,11 +13,10 @@ class TodoList extends StatefulWidget {
 class _TodoListState extends State<TodoList> {
   final TextEditingController todoController = TextEditingController();
 
-  var data = '';
+
 
   List<Todo> todos = [];
 
-  var tarefa = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +44,6 @@ class _TodoListState extends State<TodoList> {
                   SizedBox(width: 5),
                   ElevatedButton(
                     onPressed: () {
-                      data = DateTime.now().toString();
                       String text = todoController.text;
                       setState(() {
                         Todo newTodo = Todo(title: text, date: DateTime.now());
@@ -67,7 +65,8 @@ class _TodoListState extends State<TodoList> {
                 child: ListView(
                   shrinkWrap: true,
                   children: [
-                    for (Todo todo in todos) TodoListItem(title: todo.title),
+                    for (Todo todo in todos)
+                      TodoListItem(todo: todo),
                   ],
                 ),
               ),
